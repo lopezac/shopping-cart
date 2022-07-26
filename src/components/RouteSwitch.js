@@ -1,18 +1,20 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Cart from "./components/Cart";
-import Contact from "./components/Contact";
-import Home from "./components/Home";
-import Shop from "./components/Shop";
-import TopNavbar from "./components/TopNavbar";
+import Cart from "./Cart";
+import Contact from "./Contact";
+import Home from "./Home";
+import Shop from "./Shop";
+import TopNavbar from "./TopNavbar";
 
-const RouteSwitch = () => {
+const RouteSwitch = (props) => {
+  const { addItem } = props;
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<TopNavbar />}>
           <Route index element={<Home />} />
-          <Route path="shop" element={<Shop />} />
+          <Route path="shop" element={<Shop addItem={addItem} />} />
           <Route path="cart" element={<Cart />} />
           <Route path="contact" element={<Contact />} />
         </Route>

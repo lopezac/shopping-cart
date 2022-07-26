@@ -6,6 +6,8 @@ const TopNavbar = (props) => {
       <nav>
         <Link to="/">Home</Link>
         <Link to="shop">Shop</Link>
+        <Link to="cart">Cart</Link>
+        <Link to="contact">Contact</Link>
       </nav>
       <Outlet />
     </div>

@@ -7,7 +7,7 @@ import Shop from "./Shop";
 import TopNavbar from "./TopNavbar";
 
 const RouteSwitch = (props) => {
-  const { addItem } = props;
+  const { addItem, removeItem, getItems, itemTotalSum, itemsTotalSum } = props;
 
   return (
     <BrowserRouter>
@@ -15,7 +15,7 @@ const RouteSwitch = (props) => {
         <Route path="/" element={<TopNavbar />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop addItem={addItem} />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="cart" element={<Cart addItem={addItem} removeItem={removeItem} getItems={getItems} itemTotalSum={itemTotalSum} itemsTotalSum={itemsTotalSum}/>} />
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>

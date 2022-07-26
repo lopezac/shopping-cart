@@ -5,9 +5,8 @@ import RouteSwitch from "./components/RouteSwitch";
 const App = () => {
   const [cart, setCart] = useState({});
 
-  const addItem = (item) => {
+  const addItem = (id) => {
     let newCart = cart;
-    console.log(item.target);
     // if (cart[item.id]) {
     //   newCart[item.id].quantity = newCart[item.id].quantity + 1; // += 1 try later;
     // } else {

@@ -5,26 +5,43 @@ import RouteSwitch from "./components/RouteSwitch";
 const App = () => {
   const [cart, setCart] = useState({});
 
-  const addItem = (id) => {
+  const getItems = () => {
+    console.log("cart in getItems", cart)
+    return cart;
+  };
+
+  const addItem = (id, quantity) => {
     let newCart = cart;
-    // if (cart[item.id]) {
-    //   newCart[item.id].quantity = newCart[item.id].quantity + 1; // += 1 try later;
-    // } else {
-    //   newCart[item.id] = createItem(item.id);
-    // }
-    // setCart(newCart);
-    // console.log(cart);
+
+    if (cart[id]) newCart[id].quantity = newCart[id].quantity + quantity;
+    else newCart[id] = createItem(id, quantity);
+
+    setCart(newCart);
+    console.log("cart in addItem", cart);
   };
 
-  const createItem = (id) => {
-    return { id: id, quantity: 0 };
+  const createItem = (id, quantity) => {
+    return { id: id, quantity: quantity };
   };
 
-  const removeItem = () => {};
+  const removeItem = (id) => {
+    let editedCart = cart;
 
-  const totalSum = () => {};
+    editedCart[id].quantity -= 1;
+    if (editedCart[id].quantity <= 0) editedCart.splice(id, 1);
 
-  return <div>{<RouteSwitch addItem={addItem} />}</div>;
+    setCart(editedCart);
+  };
+
+  const itemsTotalSum = () => {
+    return cart.reduce((prev, item) => prev + item.price * item.quantity, 0);
+  };
+
+  const itemTotalSum = (id) => {
+    return cart[id].price * cart[id].quantity;
+  };
+
+  return <div>{<RouteSwitch addItem={addItem} removeItem={removeItem} getItems={getItems} itemTotalSum={itemTotalSum} itemsTotalSum={itemsTotalSum} />}</div>;
 };
 
 export default App;

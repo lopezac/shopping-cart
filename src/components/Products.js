@@ -1,27 +1,26 @@
+import { getItems } from "../data";
 import Product from "./Product";
-import data from "../productsData.json";
 
 const Products = (props) => {
   const getProducts = () => {
-    let products = [];
-
-    for (let product of data.watches) {
-      products.push(
+    return (props.getItems() || []).map((item) => {
+      return (
         <Product
-          key={product.id}
-          id={product.id}
-          title={product.title}
-          price={product.price}
-          img={product.img}
-          addItem={props.addItem}
+          key={item.id}
+          img={item.img}
+          title={item.title}
+          price={item.price}
+          quantity={item.quantity}
         />
       );
-    }
-
-    return products;
+    });
   };
 
-  return <div className="products">{getProducts()}</div>;
+  return (
+    <div data-testid="products" className="products">
+      {getProducts()}
+    </div>
+  );
 };
 
 export default Products;

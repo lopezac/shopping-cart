@@ -1,5 +1,5 @@
 import Products from "../components/Products";
-import { getItems, increaseQuantity, decreaseQuantity } from "../data";
+import { getItems } from "../data";
 
 const Shop = (props) => {
   return (

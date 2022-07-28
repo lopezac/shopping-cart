@@ -2,11 +2,11 @@ import "../styles/Product.css";
 import DecreaseBtn from "./DecreaseBtn";
 import IncreaseBtn from "./IncreaseBtn";
 
-const Product = (props) => {
+const CartProduct = (props) => {
   const {
     img,
     title,
-    price,
+    totalPrice,
     quantity,
     id,
     increaseQuantity,
@@ -19,7 +19,9 @@ const Product = (props) => {
       <p role="listitem" data-testid="product-title">
         {title}
       </p>
-      <p role="listitem">{price}</p>
+      <p role="listitem" data-testid="price">
+        {totalPrice(id)}
+      </p>
       <DecreaseBtn decreaseQuantity={decreaseQuantity} id={id} />
       <p role="listitem" data-testid="quantity">
         {quantity}
@@ -29,4 +31,4 @@ const Product = (props) => {
   );
 };
 
-export default Product;
+export default CartProduct;

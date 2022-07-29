@@ -50,9 +50,11 @@ describe("products", () => {
 
   it("quantity doesn't decrease below 0", () => {
     render(<Products getItems={getItemsMock} />);
-    const decreaseBtn = screen.getAllByTestId("decrease-btn")[2];
-    const quantity = screen.getAllByTestId("quantity")[2];
+    const decreaseBtn = screen.getAllByTestId("decrease-btn")[1];
+    const quantity = screen.getAllByTestId("quantity")[1];
 
+    userEvent.click(decreaseBtn);
+    userEvent.click(decreaseBtn);
     userEvent.click(decreaseBtn);
     userEvent.click(decreaseBtn);
 

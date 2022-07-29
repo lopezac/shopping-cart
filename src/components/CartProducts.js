@@ -1,16 +1,20 @@
 import { useState } from "react";
 
 import CartProduct from "./CartProduct";
+import TotalPrice from "./TotalPrice";
 
 const CartProducts = (props) => {
-  const { getItems } = props;
+  const { getItems, setTotalQuantity } = props;
 
   const [items, setItems] = useState(getPickedItems(getItems()));
 
   const increaseQuantity = (id) => {
     let newItems = items.slice();
+
     getItem(id).quantity += 1;
+
     setItems(newItems);
+    handleQuantityChange();
   };
 
   const decreaseQuantity = (id) => {
@@ -19,12 +23,23 @@ const CartProducts = (props) => {
 
     item.quantity -= 1;
     setItems(newItems);
-
-    if (item.quantity <= 0) removeItem(id);
+    handleQuantityChange();
+    if (item.quantity === 0) removeItem(id);
   };
+
+  function handleQuantityChange() {
+    if (setTotalQuantity) setTotalQuantity(getTotalQuantity());
+  }
+
+  function getTotalQuantity() {
+    return items.reduce((prev, cur) => prev + cur.quantity, 0);
+  }
 
   function removeItem(id) {
     let newItems = items.slice();
+    for (let i = 0; i < newItems.length; i++) {
+      if (newItems[i].id === id) id = i;
+    }
 
     newItems.splice(id, 1);
 
@@ -44,6 +59,10 @@ const CartProducts = (props) => {
     return items.filter((item) => item.quantity > 0);
   }
 
+  function getSumPrices() {
+    return items.reduce((prev, cur) => prev + cur.quantity * cur.price, 0);
+  }
+
   return (
     <div data-testid="cart-products" className="products">
       {(items || []).map((item) => {
@@ -60,6 +79,7 @@ const CartProducts = (props) => {
           />
         );
       })}
+      <TotalPrice price={getSumPrices} />
     </div>
   );
 };

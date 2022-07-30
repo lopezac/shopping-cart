@@ -1,6 +1,6 @@
+import ProductTop from "./ProductTop";
+import ProductBottom from "./ProductBottom";
 import "../styles/Product.css";
-import DecreaseBtn from "./DecreaseBtn";
-import IncreaseBtn from "./IncreaseBtn";
 
 const CartProduct = (props) => {
   const {
@@ -15,18 +15,16 @@ const CartProduct = (props) => {
 
   return (
     <div data-testid="product" className="product">
-      <img src={`./assets/${img}`} alt={title} />
-      <p role="listitem" data-testid="product-title">
-        {title}
-      </p>
+      <ProductTop img={img} title={title} />
       <p role="listitem" data-testid="price">
-        {totalPrice(id)}
+        ${totalPrice(id)}
       </p>
-      <DecreaseBtn decreaseQuantity={decreaseQuantity} id={id} />
-      <p role="listitem" data-testid="quantity">
-        {quantity}
-      </p>
-      <IncreaseBtn increaseQuantity={increaseQuantity} id={id} />
+      <ProductBottom
+        id={id}
+        quantity={quantity}
+        increaseQuantity={increaseQuantity}
+        decreaseQuantity={decreaseQuantity}
+      />
     </div>
   );
 };

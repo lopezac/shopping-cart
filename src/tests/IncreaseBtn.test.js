@@ -9,7 +9,7 @@ describe("Increase Button", () => {
   it("calls increaseQuantity on click", () => {
     const increaseQuantityMock = jest.fn();
     render(<IncreaseBtn increaseQuantity={increaseQuantityMock} />);
-    const increaseBtn = screen.getByRole("button");
+    const increaseBtn = screen.getByTestId("increase-btn");
 
     userEvent.click(increaseBtn);
 

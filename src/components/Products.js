@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Product from "./Product";
+import "../styles/Products.css";
 
 const Products = (props) => {
   const { getItems, setTotalQuantity } = props;

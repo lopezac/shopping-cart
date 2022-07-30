@@ -1,0 +1,21 @@
+.footer {
+  grid-area: footer;
+  background-color: var(--darker-gray);
+  color: var(--whiter);
+  margin-top: 15px;
+}
+
+.footer p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  font-size: 1rem;
+  margin: 8px 0;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--whiter);
+  font-size: 1.4rem;
+}

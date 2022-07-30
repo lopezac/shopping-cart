@@ -1,0 +1,33 @@
+.top-navbar {
+  grid-area: navbar;
+  background-color: var(--darker-gray);
+  padding: 10px;
+  display: flex;
+  column-gap: 10px;
+  font-size: 1rem;
+  align-items: center;
+}
+
+.top-navbar a {
+  text-decoration: none;
+  color: var(--whiter);
+}
+
+.top-navbar a:last-child {
+  margin-right: 5px;
+}
+
+.top-navbar .home-name {
+  margin-right: auto;
+  font-weight: bold;
+}
+
+.top-navbar .cart-icon {
+  font-size: 1.2rem;
+  padding-top: 5px;
+  display: flex;
+}
+
+.top-navbar .cart-icon svg {
+  font-size: 1.4rem;
+}

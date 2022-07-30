@@ -1,15 +1,13 @@
-const DecreaseBtn = (props) => {
+import { BsFillCaretLeftFill } from "react-icons/bs";
+
+export default function DecreaseBtn(props) {
   const { decreaseQuantity, id } = props;
 
   return (
-    <button
-      className="decrease-btn"
+    <BsFillCaretLeftFill
       data-testid="decrease-btn"
+      className="decrease-btn"
       onClick={decreaseQuantity.bind(this, id)}
-    >
-      Decrease btn
-    </button>
+    />
   );
-};
-
-export default DecreaseBtn;
+}

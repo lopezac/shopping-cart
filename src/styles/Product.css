@@ -1,3 +1,23 @@
-.product > img {
-  width: 200px;
+.product {
+  background-color: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  row-gap: 5px;
+  padding: 10px 0;
+  font-size: 1rem;
+}
+
+.product-img {
+  max-width: 100%;
+}
+
+.product-title {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.product p {
+  margin: 0;
 }

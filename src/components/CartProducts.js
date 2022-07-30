@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import CartProduct from "./CartProduct";
 import TotalPrice from "./TotalPrice";
+import "../styles/Products.css";
 
 const CartProducts = (props) => {
   const { getItems, setTotalQuantity } = props;
@@ -64,23 +65,25 @@ const CartProducts = (props) => {
   }
 
   return (
-    <div data-testid="cart-products" className="products">
-      {(items || []).map((item) => {
-        return (
-          <CartProduct
-            key={item.id}
-            img={item.img}
-            title={item.title}
-            totalPrice={getTotalPrice}
-            quantity={item.quantity}
-            id={item.id}
-            increaseQuantity={increaseQuantity}
-            decreaseQuantity={decreaseQuantity}
-          />
-        );
-      })}
+    <>
+      <div data-testid="cart-products" className="products">
+        {(items || []).map((item) => {
+          return (
+            <CartProduct
+              key={item.id}
+              img={item.img}
+              title={item.title}
+              totalPrice={getTotalPrice}
+              quantity={item.quantity}
+              id={item.id}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
+            />
+          );
+        })}
+      </div>
       <TotalPrice price={getSumPrices} />
-    </div>
+    </>
   );
 };
 

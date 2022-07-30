@@ -1,10 +1,7 @@
 export default function TotalPrice(props) {
   return (
-    <h3>
-      Total: $
-      <span data-testid="total-price" className="total-price">
-        {props.price()}
-      </span>
-    </h3>
+    <h2 className="total-price">
+      Total: $<span data-testid="total-price">{props.price()}</span>
+    </h2>
   );
 }

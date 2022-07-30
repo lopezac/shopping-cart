@@ -5,10 +5,11 @@ const Cart = (props) => {
   const { setTotalQuantity } = props;
 
   return (
-    <div>
-      <h1>Cart</h1>
+    <main className="content cart">
+      <h1 className="content-title">Cart</h1>
       <CartProducts getItems={getItems} setTotalQuantity={setTotalQuantity} />
-    </div>
+      <button>Order Now</button>
+    </main>
   );
 };
 

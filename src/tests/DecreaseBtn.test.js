@@ -9,7 +9,7 @@ describe("decreaseBtn", () => {
   it("calls decreaseQuantity on click", () => {
     const decreaseQuantityMock = jest.fn();
     render(<DecreaseBtn decreaseQuantity={decreaseQuantityMock} />);
-    const decreaseBtn = screen.getByRole("button");
+    const decreaseBtn = screen.getByTestId("decrease-btn");
 
     userEvent.click(decreaseBtn);
 

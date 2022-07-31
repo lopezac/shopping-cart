@@ -11,7 +11,7 @@ const RouteSwitch = (props) => {
   const [totalQuantity, setTotalQuantity] = useState(0);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/shopping-cart">
       <Routes>
         <Route path="/" element={<Layout totalQuantity={totalQuantity} />}>
           <Route index element={<Home />} />

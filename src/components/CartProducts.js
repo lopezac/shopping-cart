@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { func } from "prop-types";
 
 import CartProduct from "./CartProduct";
 import TotalPrice from "./TotalPrice";
 import "../styles/Products.css";
 
-const CartProducts = (props) => {
+function CartProducts(props) {
   const { getItems, setTotalQuantity } = props;
 
   const [items, setItems] = useState(getPickedItems(getItems()));
@@ -85,6 +86,11 @@ const CartProducts = (props) => {
       <TotalPrice price={getSumPrices} />
     </>
   );
+}
+
+CartProducts.propTypes = {
+  getItems: func,
+  setTotalQuantity: func,
 };
 
 export default CartProducts;

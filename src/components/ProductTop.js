@@ -1,4 +1,6 @@
-export default function ProductTop(props) {
+import { string } from "prop-types";
+
+function ProductTop(props) {
   const { title, img } = props;
 
   return (
@@ -10,3 +12,10 @@ export default function ProductTop(props) {
     </>
   );
 }
+
+ProductTop.propTypes = {
+  title: string,
+  img: string,
+};
+
+export default ProductTop;

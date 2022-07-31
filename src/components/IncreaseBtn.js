@@ -1,6 +1,8 @@
+import { func, number } from "prop-types";
+
 import { BsFillCaretRightFill } from "react-icons/bs";
 
-export default function IncreaseBtn(props) {
+function IncreaseBtn(props) {
   const { increaseQuantity, id } = props;
 
   return (
@@ -11,3 +13,14 @@ export default function IncreaseBtn(props) {
     />
   );
 }
+
+IncreaseBtn.defaultProps = {
+  id: 0,
+};
+
+IncreaseBtn.propTypes = {
+  id: number,
+  increaseQuantity: func.isRequired,
+};
+
+export default IncreaseBtn;

@@ -1,8 +1,10 @@
+import { func, number } from "prop-types";
+
 import DecreaseBtn from "./DecreaseBtn";
 import IncreaseBtn from "./IncreaseBtn";
 import "../styles/ProductBottom.css";
 
-export default function ProductBottom(props) {
+function ProductBottom(props) {
   const { increaseQuantity, decreaseQuantity, id, quantity } = props;
 
   return (
@@ -15,3 +17,17 @@ export default function ProductBottom(props) {
     </div>
   );
 }
+
+ProductBottom.defaultProps = {
+  id: 0,
+  quantity: 0,
+};
+
+ProductBottom.propTypes = {
+  increaseQuantity: func.isRequired,
+  decreaseQuantity: func.isRequired,
+  id: number,
+  quantity: number,
+};
+
+export default ProductBottom;

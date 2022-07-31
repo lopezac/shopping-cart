@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { func } from "prop-types";
 
 import Product from "./Product";
 import "../styles/Products.css";
 
-const Products = (props) => {
+function Products(props) {
   const { getItems, setTotalQuantity } = props;
 
   const [items, setItems] = useState(getItems());
@@ -49,6 +50,11 @@ const Products = (props) => {
       })}
     </div>
   );
+}
+
+Products.propTypes = {
+  getItems: func,
+  setTotalQuantity: func,
 };
 
 export default Products;

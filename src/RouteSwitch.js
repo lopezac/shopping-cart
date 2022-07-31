@@ -7,7 +7,7 @@ import Home from "./routes/Home";
 import Shop from "./routes/Shop";
 import Layout from "./routes/Layout";
 
-const RouteSwitch = (props) => {
+function RouteSwitch() {
   const [totalQuantity, setTotalQuantity] = useState(0);
 
   return (
@@ -28,6 +28,6 @@ const RouteSwitch = (props) => {
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default RouteSwitch;

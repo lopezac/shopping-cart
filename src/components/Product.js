@@ -1,8 +1,10 @@
+import { string, number, func } from "prop-types";
+
 import ProductTop from "./ProductTop";
 import ProductBottom from "./ProductBottom";
 import "../styles/Product.css";
 
-const Product = (props) => {
+function Product(props) {
   const {
     img,
     title,
@@ -25,6 +27,22 @@ const Product = (props) => {
       />
     </div>
   );
+}
+
+Product.defaultProps = {
+  img: "watch-1.png",
+  quantity: 0,
+  id: 0,
+};
+
+Product.propTypes = {
+  img: string,
+  title: string.isRequired,
+  price: number.isRequired,
+  quantity: number,
+  id: number,
+  increaseQuantity: func.isRequired,
+  decreaseQuantity: func.isRequired,
 };
 
 export default Product;

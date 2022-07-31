@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
+import { number } from "prop-types";
 
 import "../styles/TopNavbar.css";
 
-const TopNavbar = (props) => {
+function TopNavbar(props) {
   const { totalQuantity } = props;
 
   return (
@@ -20,6 +21,14 @@ const TopNavbar = (props) => {
       <Link to="contact">Contact</Link>
     </nav>
   );
+}
+
+TopNavbar.defaultProps = {
+  totalQuantity: 0,
+};
+
+TopNavbar.propTypes = {
+  totalQuantity: number,
 };
 
 export default TopNavbar;

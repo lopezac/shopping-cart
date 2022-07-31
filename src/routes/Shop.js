@@ -1,8 +1,9 @@
+import { func } from "prop-types";
 import Products from "../components/Products";
 import { getItems } from "../data";
 import "../styles/Shop.css";
 
-const Shop = (props) => {
+function Shop(props) {
   const { setTotalQuantity } = props;
 
   return (
@@ -11,6 +12,10 @@ const Shop = (props) => {
       <Products getItems={getItems} setTotalQuantity={setTotalQuantity} />
     </main>
   );
+}
+
+Shop.propTypes = {
+  setTotalQuantity: func.isRequired,
 };
 
 export default Shop;

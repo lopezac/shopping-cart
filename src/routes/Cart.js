@@ -1,7 +1,8 @@
+import { func } from "prop-types";
 import CartProducts from "../components/CartProducts";
 import { getItems } from "../data";
 
-const Cart = (props) => {
+function Cart(props) {
   const { setTotalQuantity } = props;
 
   return (
@@ -11,6 +12,10 @@ const Cart = (props) => {
       <button>Order Now</button>
     </main>
   );
+}
+
+Cart.propTypes = {
+  setTotalQuantity: func.isRequired,
 };
 
 export default Cart;

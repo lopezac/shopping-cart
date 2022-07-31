@@ -1,6 +1,8 @@
+import { number, func } from "prop-types";
+
 import { BsFillCaretLeftFill } from "react-icons/bs";
 
-export default function DecreaseBtn(props) {
+function DecreaseBtn(props) {
   const { decreaseQuantity, id } = props;
 
   return (
@@ -11,3 +13,14 @@ export default function DecreaseBtn(props) {
     />
   );
 }
+
+DecreaseBtn.defaultProps = {
+  id: 0,
+};
+
+DecreaseBtn.propTypes = {
+  id: number,
+  decreaseQuantity: func.isRequired,
+};
+
+export default DecreaseBtn;

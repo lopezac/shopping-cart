@@ -1,3 +1,5 @@
+import { string, number, func } from "prop-types";
+
 import ProductTop from "./ProductTop";
 import ProductBottom from "./ProductBottom";
 import "../styles/Product.css";
@@ -27,6 +29,16 @@ const CartProduct = (props) => {
       />
     </div>
   );
+};
+
+CartProduct.propTypes = {
+  img: string.isRequired,
+  title: string.isRequired,
+  totalPrice: func.isRequired,
+  quantity: number.isRequired,
+  id: number.isRequired,
+  increaseQuantity: func.isRequired,
+  decreaseQuantity: func.isRequired,
 };
 
 export default CartProduct;

@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
-
 import HomeHero from "../components/HomeHero";
+import { StyledLink, Button } from "../styles/Button";
+import { ContentTitle } from "../styles/Title";
+import { Content } from "../styles/Content";
 
 export default function Home() {
   return (
-    <div className="home content">
-      <h1 className="content-title">Casio Watches</h1>
+    <Content>
+      <ContentTitle>Casio Watches</ContentTitle>
       <HomeHero />
-      <button>
-        <Link to="/shop">Shop Now</Link>
-      </button>
-    </div>
+      <Button>
+        <StyledLink to="/shop">Shop Now</StyledLink>
+      </Button>
+    </Content>
   );
 }

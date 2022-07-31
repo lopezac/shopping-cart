@@ -2,7 +2,7 @@ import { useState } from "react";
 import { func } from "prop-types";
 
 import Product from "./Product";
-import "../styles/Products.css";
+import { ProductsStyle } from "../styles/ProductsStyles";
 
 function Products(props) {
   const { getItems, setTotalQuantity } = props;
@@ -33,7 +33,7 @@ function Products(props) {
   }
 
   return (
-    <div data-testid="products" className="products">
+    <ProductsStyle data-testid="products" className="products">
       {(items || []).map((item) => {
         return (
           <Product
@@ -48,7 +48,7 @@ function Products(props) {
           />
         );
       })}
-    </div>
+    </ProductsStyle>
   );
 }
 

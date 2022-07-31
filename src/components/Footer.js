@@ -1,16 +1,18 @@
 import { BsGithub } from "react-icons/bs";
 
-import "../styles/Footer.css";
+import { FooterAnchor } from "../styles/Button";
+import { FooterPara } from "../styles/Paragraph";
+import { FooterStyle } from "../styles/Content";
 
 export default function Footer() {
   return (
-    <div className="footer">
-      <p>
+    <FooterStyle>
+      <FooterPara>
         Axel C. Lopez @Copyright 2022{" "}
-        <a href="https://www.github.com/lopezac">
+        <FooterAnchor href="https://www.github.com/lopezac">
           <BsGithub />
-        </a>
-      </p>
-    </div>
+        </FooterAnchor>
+      </FooterPara>
+    </FooterStyle>
   );
 }

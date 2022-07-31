@@ -1,16 +1,18 @@
 import { func } from "prop-types";
+
 import Products from "../components/Products";
 import { getItems } from "../data";
-import "../styles/Shop.css";
+import { Content } from "../styles/Content";
+import { ContentTitle } from "../styles/Title";
 
 function Shop(props) {
   const { setTotalQuantity } = props;
 
   return (
-    <main className="content shop">
-      <h1 className="content-title">Watches Shop</h1>
+    <Content>
+      <ContentTitle>Watches Shop</ContentTitle>
       <Products getItems={getItems} setTotalQuantity={setTotalQuantity} />
-    </main>
+    </Content>
   );
 }
 

@@ -2,19 +2,19 @@ import { func, number } from "prop-types";
 
 import DecreaseBtn from "./DecreaseBtn";
 import IncreaseBtn from "./IncreaseBtn";
-import "../styles/ProductBottom.css";
+import { ProductBottomStyle } from "../styles/ProductsStyles";
 
 function ProductBottom(props) {
   const { increaseQuantity, decreaseQuantity, id, quantity } = props;
 
   return (
-    <div className="product-bottom">
+    <ProductBottomStyle>
       <DecreaseBtn decreaseQuantity={decreaseQuantity} id={id} />
       <p className="quantity" role="listitem" data-testid="quantity">
         {quantity}
       </p>
       <IncreaseBtn increaseQuantity={increaseQuantity} id={id} />
-    </div>
+    </ProductBottomStyle>
   );
 }
 

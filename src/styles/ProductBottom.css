@@ -1,9 +1,0 @@
-.product-bottom {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-}
-
-.product-bottom svg {
-  cursor: pointer;
-}

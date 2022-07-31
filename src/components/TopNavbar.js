@@ -1,25 +1,25 @@
-import { Link } from "react-router-dom";
 import { BsCart } from "react-icons/bs";
 import { number } from "prop-types";
 
-import "../styles/TopNavbar.css";
+import { StyledLink } from "../styles/Button";
+import { NavBar } from "../styles/TopNavbar";
 
 function TopNavbar(props) {
   const { totalQuantity } = props;
 
   return (
-    <nav className="top-navbar">
-      <Link to="/" className="home-name">
+    <NavBar>
+      <StyledLink className="home-name" to="/">
         CASIO
-      </Link>
-      <Link to="/">Home</Link>
-      <Link to="shop">Shop</Link>
-      <Link to="cart" className="cart-icon">
+      </StyledLink>
+      <StyledLink to="/">Home</StyledLink>
+      <StyledLink to="shop">Shop</StyledLink>
+      <StyledLink to="cart" className="cart-icon">
         <BsCart />
         <span className="total-quantity">{totalQuantity}</span>
-      </Link>
-      <Link to="contact">Contact</Link>
-    </nav>
+      </StyledLink>
+      <StyledLink to="contact">Contact</StyledLink>
+    </NavBar>
   );
 }
 

@@ -1,16 +1,20 @@
 import { func } from "prop-types";
+
 import CartProducts from "../components/CartProducts";
 import { getItems } from "../data";
+import { Button } from "../styles/Button";
+import { Content } from "../styles/Content";
+import { ContentTitle } from "../styles/Title";
 
 function Cart(props) {
   const { setTotalQuantity } = props;
 
   return (
-    <main className="content cart">
-      <h1 className="content-title">Cart</h1>
+    <Content>
+      <ContentTitle className="content-title">Cart</ContentTitle>
       <CartProducts getItems={getItems} setTotalQuantity={setTotalQuantity} />
-      <button>Order Now</button>
-    </main>
+      <Button>Order Now</Button>
+    </Content>
   );
 }
 

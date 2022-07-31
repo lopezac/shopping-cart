@@ -1,14 +1,21 @@
 import { string } from "prop-types";
 
+import { ProductImg } from "../styles/Img";
+import { ProductTitle } from "../styles/Title";
+
 function ProductTop(props) {
   const { title, img } = props;
 
   return (
     <>
-      <img className="product-img" src={`./assets/${img}`} alt={title} />
-      <p className="product-title" role="listitem" data-testid="product-title">
+      <ProductImg className="product-img" src={`./assets/${img}`} alt={title} />
+      <ProductTitle
+        className="product-title"
+        role="listitem"
+        data-testid="product-title"
+      >
         {title}
-      </p>
+      </ProductTitle>
     </>
   );
 }

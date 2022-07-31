@@ -2,7 +2,7 @@ import { string, number, func } from "prop-types";
 
 import ProductTop from "./ProductTop";
 import ProductBottom from "./ProductBottom";
-import "../styles/Product.css";
+import { ProductStyle } from "../styles/ProductsStyles";
 
 function Product(props) {
   const {
@@ -16,7 +16,7 @@ function Product(props) {
   } = props;
 
   return (
-    <div data-testid="product" className="product">
+    <ProductStyle data-testid="product" className="product">
       <ProductTop img={img} title={title} />
       <p role="listitem">${price}</p>
       <ProductBottom
@@ -25,7 +25,7 @@ function Product(props) {
         increaseQuantity={increaseQuantity}
         decreaseQuantity={decreaseQuantity}
       />
-    </div>
+    </ProductStyle>
   );
 }
 

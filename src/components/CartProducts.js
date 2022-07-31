@@ -3,7 +3,7 @@ import { func } from "prop-types";
 
 import CartProduct from "./CartProduct";
 import TotalPrice from "./TotalPrice";
-import "../styles/Products.css";
+import { ProductsStyle } from "../styles/ProductsStyles";
 
 function CartProducts(props) {
   const { getItems, setTotalQuantity } = props;
@@ -67,7 +67,7 @@ function CartProducts(props) {
 
   return (
     <>
-      <div data-testid="cart-products" className="products">
+      <ProductsStyle data-testid="cart-products" className="products">
         {(items || []).map((item) => {
           return (
             <CartProduct
@@ -82,7 +82,7 @@ function CartProducts(props) {
             />
           );
         })}
-      </div>
+      </ProductsStyle>
       <TotalPrice price={getSumPrices} />
     </>
   );

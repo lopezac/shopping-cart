@@ -1,12 +1,14 @@
 import { func } from "prop-types";
 
+import { TotalPriceStyle } from "../styles/Paragraph";
+
 function TotalPrice(props) {
   const { price } = props;
 
   return (
-    <h2 className="total-price">
+    <TotalPriceStyle>
       Total: $<span data-testid="total-price">{price()}</span>
-    </h2>
+    </TotalPriceStyle>
   );
 }
 
